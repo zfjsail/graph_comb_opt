@@ -13,8 +13,12 @@ class MvcLib(object):
         self.lib.Fit.restype = ctypes.c_double
         self.lib.Test.restype = ctypes.c_double
         self.lib.GetSol.restype = ctypes.c_double
+        # args = str.encode(' '.join(args))
         arr = (ctypes.c_char_p * len(args))()
-        arr[:] = args
+        print(args)
+        # arr[:] = args
+        arr[:] = [str.encode(arg) for arg in args]
+        print('arr', arr)
         self.lib.Init(len(args), arr)
         self.ngraph_train = 0
         self.ngraph_test = 0

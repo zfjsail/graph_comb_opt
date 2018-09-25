@@ -66,5 +66,6 @@ python main.py \
     -momentum 0.9 \
     -l2 0.00 \
     -w_scale $w_scale \
-    2>&1 | tee $save_dir/log-$min_n-${max_n}.txt
+#    -w_scale $w_scale \
+#    2>&1 | tee $save_dir/log-$min_n-${max_n}.txt
 #    -load_model $save_dir/iter_5.model \
